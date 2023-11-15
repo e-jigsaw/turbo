@@ -1,5 +1,5 @@
 [package]
-name = "turbopack-cli-utils"
+name = "turbopack-trace-utils"
 version = "0.1.0"
 description = "TBD"
 license = "MPL-2.0"
@@ -13,15 +13,10 @@ bench = false
 
 [dependencies]
 anyhow = { workspace = true }
-clap = { workspace = true, features = ["derive"] }
-crossterm = "0.26.0"
+crossbeam-channel = { workspace = true }
 once_cell = { workspace = true }
-owo-colors = { workspace = true }
+postcard = { workspace = true, features = ["alloc", "use-std"] }
 serde = { workspace = true, features = ["derive"] }
-turbo-tasks = { workspace = true }
-turbo-tasks-fs = { workspace = true }
-turbopack-core = { workspace = true }
-turbopack-ecmascript = { workspace = true }
-
-[build-dependencies]
-turbo-tasks-build = { workspace = true }
+tokio = { workspace = true, features = ["signal", "rt"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
